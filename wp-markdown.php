@@ -9,9 +9,6 @@
  * License:         MIT License
  * Text Domain:     tiny-pixel
  * Domain Path:     /resources/lang
- *
- * Note: this file is intentionally written for compatibility with PHP versions
- * which the plugin itself does not support.
  */
 
 namespace WPMarkdown;

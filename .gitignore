@@ -1,3 +1,4 @@
 src/*.css
 /node_modules
 /dist
+.cache
