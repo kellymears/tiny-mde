@@ -18,15 +18,21 @@
     "@babel/preset-react": "^7.0.0",
     "@wordpress/babel-preset-default": "^2.1.0",
     "astroturf": "^0.9.1",
+    "autoprefixer": "^9.4.10",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "parcel-bundler": "^1.12.0",
     "postcss-modules": "^1.4.1",
+    "postcss-preset-env": "^6.6.0",
+    "stylelint": "^9.10.1",
     "webpack": ">=2"
   },
   "postcss": {
     "modules": true,
     "plugins": [
-      "postcss-nested"
+      "autoprefixer",
+      "postcss-nested",
+      "postcss-preset-env",
+      "cssnano"
     ]
   },
   "babel": {
