@@ -4,9 +4,9 @@
     "src/**/*.css": "dist/styles"
   },
   "scripts": {
-    "start": "parcel watch src/index.js",
-    "build": "parcel build src/index.js",
-    "package": "./bin/build-plugin-zip.sh"
+    "start": "parcel src/block.js  --no-source-maps --no-hmr --no-cache",
+    "watch": "parcel watch src/block.js --no-source-maps --hmr-hostname fleek.test --no-cache",
+    "build": "parcel build src/block.js --no-content-hash"
   },
   "keywords": [
     "wordpress",
@@ -14,46 +14,55 @@
     "javascript"
   ],
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
+    "@babel/core": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@wordpress/babel-preset-default": "^2.1.0",
+    "@wordpress/babel-plugin-makepot": "^2.1.3",
+    "@wordpress/babel-preset-default": "^4.0.0",
+    "@wordpress/blocks": "^6.1.0",
+    "@wordpress/element": "^2.1.9",
     "astroturf": "^0.9.1",
-    "autoprefixer": "^9.4.10",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "2.0.1",
+    "classnames": "^2.2.6",
+    "cross-env": "^5.2.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-jest": "^21.6.1",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-wordpress": "^0.1.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "fs-extra": "^5.0.0",
     "parcel-bundler": "^1.12.0",
     "postcss-modules": "^1.4.1",
     "postcss-preset-env": "^6.6.0",
+    "precss": "^4.0.0",
     "stylelint": "^9.10.1",
-    "webpack": ">=2"
+    "vue-template-compiler": "^2.6.8",
+    "webpack": "^3.1.0"
+  },
+  "dependencies": {
+    "converter": "^0.0.5",
+    "react-mde": "^7.0.4",
+    "showdown": "^1.9.0",
+    "showdown-highlight": "^2.1.3"
   },
   "postcss": {
     "modules": true,
     "plugins": [
-      "autoprefixer",
-      "postcss-nested",
-      "postcss-preset-env",
-      "cssnano"
+      "precss"
     ]
   },
   "babel": {
     "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
+      "@wordpress/default"
     ],
     "plugins": [
-      [
-        "transform-react-jsx",
-        {
-          "pragma": "wp.element.createElement"
-        }
-      ],
       [
         "astroturf/plugin"
       ]
     ]
-  },
-  "dependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
   }
 }
