@@ -1,7 +1,6 @@
 const { Component, RawHTML } = wp.element
 import * as Showdown from 'showdown'
 import { StyledReactMde, visibility } from './styled'
-
 class Edit extends Component {
   constructor() {
     super(...arguments)
@@ -12,7 +11,6 @@ class Edit extends Component {
       strikethrough: true,
       tasklists: true,
       ghMentions: true,
-      extensions: [showdownHighlight]
     })
 
     this.state = {
