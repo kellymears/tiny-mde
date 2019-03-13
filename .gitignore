@@ -1,4 +1,4 @@
-src/*.css
+src/**/*.css
 /node_modules
 /dist
 .cache
